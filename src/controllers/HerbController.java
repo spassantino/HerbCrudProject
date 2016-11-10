@@ -50,7 +50,7 @@ public class HerbController {
 		return mv;
 	}
 	@RequestMapping("next.do")
-	public ModelAndView next(@ModelAttribute("currentState") List<Herb> herbList,
+	public ModelAndView next(@ModelAttribute("currentHerb") List<Herb> herbList,
 			@ModelAttribute("herb") Herb herb) {
 		ModelAndView mv = new ModelAndView();
 		int index = herbList.indexOf(herb);
