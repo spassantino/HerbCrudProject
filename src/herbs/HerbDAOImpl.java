@@ -12,11 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.WebApplicationContext;
 
 public class HerbDAOImpl implements HerbDAO {
-	private static final String FILE_NAME = "/WEB-INF/xxx.csv";
+	private static final String FILE_NAME = "/WEB-INF/herbs.csv";
 	private List<Herb> herbs = new ArrayList<>();
 	
 	@Autowired
 	private WebApplicationContext wac;
+	
 	@PostConstruct
 	public void init() {
 		try (InputStream is = wac.getServletContext().getResourceAsStream(FILE_NAME);
@@ -24,12 +25,12 @@ public class HerbDAOImpl implements HerbDAO {
 			String line = buf.readLine();
 			while ((line = buf.readLine()) != null) {
 				String[] tokens = line.split(",");
-				String scientificName = tokens[1];
-				String commonName = tokens[2];
-				String family = tokens[3];
-				String uses = tokens[4];
-				String precautions = tokens[5];
-				String photo = tokens[6];
+				String scientificName = tokens[0];
+				String commonName = tokens[1];
+				String family = tokens[2];
+				String uses = tokens[3];
+				String precautions = tokens[4];
+				String photo = tokens[5];
 				herbs.add(new Herb(scientificName, commonName, family, uses, precautions, photo));
 			}
 		} catch (Exception e) {
@@ -40,7 +41,7 @@ public class HerbDAOImpl implements HerbDAO {
 	public Herb getHerbByScientificName(String scientificName) {
 		Herb s = null;
 		for (Herb herb : herbs) {
-			if (herb.getScientificName().equals(scientificName)) {
+			if (herb.getScientificName().toLowerCase().startsWith(scientificName.toLowerCase())) {
 				s = herb;
 			}
 		}
@@ -50,8 +51,10 @@ public class HerbDAOImpl implements HerbDAO {
 	@Override
 	public Herb getHerbByCommonName(String commonName) {
 		Herb s = null;
+		System.out.println(commonName);
 		for (Herb herb : herbs) {
-			if (herb.getCommonName().equals(commonName)) {
+			System.out.println(herb);
+			if (herb.getCommonName().toLowerCase().startsWith(commonName.toLowerCase())) {
 				s = herb;
 			}
 		}
@@ -70,5 +73,17 @@ public class HerbDAOImpl implements HerbDAO {
 	public List<Herb> getHerbs() {
 		return herbs;
 	}
+	@Override
+	public void updateHerb(Herb h) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void deleteHerb(Herb h) {
+		herbs.remove(h);
+		for (Herb s : herbs) {
+			System.out.println(s);
+	}
 
+	}
 }

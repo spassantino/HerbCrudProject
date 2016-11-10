@@ -6,5 +6,7 @@ public interface HerbDAO {
 	  public Herb getHerbByScientificName(String scientificName);
 	  public Herb getHerbByCommonName(String commonName);
 	  public void addHerb(Herb h);
+	  public void updateHerb(Herb h);
+	  public void deleteHerb(Herb h);
 	  public List<Herb> getHerbs();
 }

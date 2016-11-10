@@ -17,6 +17,7 @@ import herbs.Herb;
 @Controller
 @SessionAttributes({ "currentHerb", "herb" })
 public class HerbController {
+	
 	@Autowired
 	private HerbDAO herbdao;
 
@@ -26,7 +27,7 @@ public class HerbController {
 	    return list;
 	  }	
 	@ModelAttribute("herb")
-	public Herb initState() {
+	public Herb initHerb() {
 		return new Herb();
 	}	
 	@RequestMapping("previous.do")
@@ -68,23 +69,25 @@ public class HerbController {
 	@RequestMapping(path = "GetHerbData.do", params = "commonName", method = RequestMethod.GET)
 	public ModelAndView getByCommonName(@RequestParam("commonName") String n, @ModelAttribute("herb") Herb herb) {
 		ModelAndView mv = new ModelAndView();
+		System.out.println(n);
 		mv.setViewName("result.jsp");
 		mv.addObject("herb", herbdao.getHerbByCommonName(n));
 		return mv;
 	}
 	@RequestMapping(path = "GetHerbData.do", params = "scientificName", method = RequestMethod.GET)
-	public ModelAndView getByScientificName(@RequestParam("scientificName") String a,@ModelAttribute("state") Herb herb) {
+	public ModelAndView getByScientificName(@RequestParam("scientificName") String a,@ModelAttribute("herb") Herb herb) {
 		ModelAndView mv = new ModelAndView();
 		herb = herbdao.getHerbByScientificName(a);
 		mv.setViewName("result.jsp");
-		mv.addObject("herb", herb);
+		mv.addObject("herb", herbdao.getHerbByScientificName(a));
 		return mv;
 	}
 	@RequestMapping(path = "NewHerb.do", method = RequestMethod.POST)
 	public ModelAndView newHerb(Herb herb) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result.jsp");
+		mv.setViewName("newResult.jsp");
 		mv.addObject("herb", herb);
+		herbdao.addHerb(herb);
 		return mv;
 	}
 }

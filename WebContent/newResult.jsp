@@ -10,8 +10,7 @@
 <title>Herbs</title>
 </head>
 <body>
-	<c:choose>
-		<c:when test="${! empty herb}">
+<h1>You have successfully added an Herb!</h1>
 				Herb Scientific Name: ${herb.scientificName}<br>
 				Herb Common Name: ${herb.commonName}<br>
 				Herb Family: ${herb.family}<br>
@@ -24,10 +23,5 @@
 		<form action="next.do" method="GET">
 		<input type="submit" value="next">
 		</form>
-		</c:when>
-		<c:otherwise>
-			<p>No herb found</p>
-		</c:otherwise>
-	</c:choose>
 </body>
 </html>
