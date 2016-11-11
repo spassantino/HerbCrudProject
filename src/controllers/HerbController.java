@@ -106,10 +106,17 @@ public class HerbController {
 		return mv;
 	}
 	@RequestMapping(path = "UpdateHerb.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView updateHerb(@RequestParam("commonName") String n, @RequestParam("choice") String c, @ModelAttribute("herb") Herb herb) {
+	public ModelAndView updateHerb(@RequestParam("cn") String n, Herb h, @ModelAttribute("herb") Herb herb) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("result.jsp");
-		herbdao.updateHerb(n);
+		mv.setViewName("index.jsp");
+		herbdao.updateHerb(h, n);
+		System.out.println(h.getCommonName());
+		System.out.println(h.getFamily());
+		System.out.println(h.getPhoto());
+		System.out.println(h.getPrecautions());
+		System.out.println(h.getScientificName());
+		System.out.println(h.getUses());
+
 		mv.addObject("herb", herbdao.getHerbByCommonName(n));
 		System.out.println(herb);
 		return mv;
