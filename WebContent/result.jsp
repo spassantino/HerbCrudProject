@@ -17,17 +17,23 @@
 				Herb Family: ${herb.family}<br>
 				Herb Uses: ${herb.uses}<br>
 				Herb Precautions: ${herb.precautions}<br>
-				${herb.photo}<br>
+				
+			<img src="${herb.photo}" alt="herb photo"><br>
+		</c:when>
+		<c:otherwise>
+			<p>No herb found</p>
+		</c:otherwise>
+	</c:choose>
 		<form action="previous.do" method="GET">
 		<input type="submit" value="previous">
 		</form>
 		<form action="next.do" method="GET">
 		<input type="submit" value="next">
 		</form>
-		</c:when>
-		<c:otherwise>
-			<p>No herb found</p>
-		</c:otherwise>
-	</c:choose>
+		<form action="DeleteHerb.do" method="GET">
+		<input type="hidden" name="commonName" value="${herb.commonName}">
+		<input type="submit" value="delete">
+		</form>
+	<a href="index.jsp" >Return to Home Page</a>
 </body>
 </html>

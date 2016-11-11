@@ -43,6 +43,9 @@ public class HerbController {
 			herb = herbList.get(herbList.size()-1);
 			System.out.println(herb);
 		}
+		else if(index == -1){
+			herb = herbList.get(0);
+		}
 		else {
 			herb = herbList.get(index-1);
 		}
@@ -66,11 +69,15 @@ public class HerbController {
 		mv.addObject("herb", herb);
 		return mv;
 	}
-	@RequestMapping(path = "GetHerbData.do", params = "commonName", method = RequestMethod.GET)
-	public ModelAndView getByCommonName(@RequestParam("commonName") String n, @ModelAttribute("herb") Herb herb) {
+	@RequestMapping(path = "GetHerbData.do", params = "cn", method = RequestMethod.GET)
+	public ModelAndView getByCommonName(@RequestParam("cn") String n,@ModelAttribute("herb") Herb herb) {
 		ModelAndView mv = new ModelAndView();
-		System.out.println(n);
+		System.out.println("first: " + n);
 		mv.setViewName("result.jsp");
+		for(Herb h: herbdao.getHerbs()){
+			System.out.println(h.getCommonName());
+		}
+//		System.out.println("second: " + herbdao.getHerbByCommonName(n).getCommonName());
 		mv.addObject("herb", herbdao.getHerbByCommonName(n));
 		return mv;
 	}
@@ -88,6 +95,23 @@ public class HerbController {
 		mv.setViewName("newResult.jsp");
 		mv.addObject("herb", herb);
 		herbdao.addHerb(herb);
+		return mv;
+	}
+	@RequestMapping(path = "DeleteHerb.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView deleteHerb(@RequestParam("commonName") String n, @ModelAttribute("herb") Herb herb) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index.jsp");
+		mv.addObject("herb", herbdao.getHerbByCommonName(n));
+		herbdao.deleteHerb(n);
+		return mv;
+	}
+	@RequestMapping(path = "UpdateHerb.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView updateHerb(@RequestParam("commonName") String n, @ModelAttribute("herb") Herb herb) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("result.jsp");
+		herbdao.updateHerb(n);
+		mv.addObject("herb", herbdao.getHerbByCommonName(n));
+		System.out.println(herb);
 		return mv;
 	}
 }

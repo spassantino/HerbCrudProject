@@ -11,6 +11,11 @@
 <br>
 <a href="scientificNameForm.html">Search a Herb by Scientific Name</a>
 <br>
-<a href="newHerb.html">Add a Herb and Its Data</a>
+<a href="newHerb.html">Add a new Herb and Its Data</a>
+<br>
+<a href="deleteHerb.html">Remove a Herb and Its Data</a>
+<br>
+<a href="updateHerb.html">Update an existing herb and Its Data</a>
+<br>
 </body>
 </html>

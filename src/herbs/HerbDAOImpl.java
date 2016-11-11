@@ -39,7 +39,7 @@ public class HerbDAOImpl implements HerbDAO {
 	}
 	@Override
 	public Herb getHerbByScientificName(String scientificName) {
-		Herb s = null;
+		Herb s = new Herb();
 		for (Herb herb : herbs) {
 			if (herb.getScientificName().toLowerCase().startsWith(scientificName.toLowerCase())) {
 				s = herb;
@@ -50,17 +50,14 @@ public class HerbDAOImpl implements HerbDAO {
 
 	@Override
 	public Herb getHerbByCommonName(String commonName) {
-		Herb s = null;
-		System.out.println(commonName);
+		Herb s = new Herb();
 		for (Herb herb : herbs) {
-			System.out.println(herb);
 			if (herb.getCommonName().toLowerCase().startsWith(commonName.toLowerCase())) {
 				s = herb;
 			}
 		}
 		return s;
 	}
-
 	@Override
 	public void addHerb(Herb h) {
 		herbs.add(h);
@@ -74,16 +71,28 @@ public class HerbDAOImpl implements HerbDAO {
 		return herbs;
 	}
 	@Override
-	public void updateHerb(Herb h) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void deleteHerb(Herb h) {
-		herbs.remove(h);
+	public void updateHerb(String h) {
+		Herb herb = new Herb();
 		for (Herb s : herbs) {
-			System.out.println(s);
+			if(s.getCommonName().toLowerCase().contains(h.toLowerCase())){
+				System.out.println(herbs.indexOf(s));
+				herb = s;
+				herbs.set(herbs.indexOf(s), herb);
+				System.out.println(herbs.indexOf(herb));
+			}
+		}
 	}
 
+	
+	@Override
+	public void deleteHerb(String h) {
+		Herb herb = null;
+		for (Herb s : herbs) {
+			if(s.getCommonName().toLowerCase().contains(h.toLowerCase())){
+				herb = s;
+				System.out.println(herb);
+			}
+		}
+		herbs.remove(herb);
 	}
 }

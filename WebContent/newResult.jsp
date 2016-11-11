@@ -10,7 +10,7 @@
 <title>Herbs</title>
 </head>
 <body>
-<h1>You have successfully added an Herb!</h1>
+<h1>You have successfully updated the Herb database!</h1>
 				Herb Scientific Name: ${herb.scientificName}<br>
 				Herb Common Name: ${herb.commonName}<br>
 				Herb Family: ${herb.family}<br>
@@ -22,6 +22,10 @@
 		</form>
 		<form action="next.do" method="GET">
 		<input type="submit" value="next">
+		</form>
+		<form action="DeleteHerb.do" method="GET">
+		<input type="hidden" name="commonName" value="${herb.commonName}">
+		<input type="submit" value="delete">
 		</form>
 </body>
 </html>
