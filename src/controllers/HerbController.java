@@ -81,8 +81,8 @@ public class HerbController {
 		mv.addObject("herb", herbdao.getHerbByCommonName(n));
 		return mv;
 	}
-	@RequestMapping(path = "GetHerbData.do", params = "scientificName", method = RequestMethod.GET)
-	public ModelAndView getByScientificName(@RequestParam("scientificName") String a,@ModelAttribute("herb") Herb herb) {
+	@RequestMapping(path = "GetHerbData.do", params = "sn", method = RequestMethod.GET)
+	public ModelAndView getByScientificName(@RequestParam("sn") String a,@ModelAttribute("herb") Herb herb) {
 		ModelAndView mv = new ModelAndView();
 		herb = herbdao.getHerbByScientificName(a);
 		mv.setViewName("result.jsp");
@@ -106,7 +106,7 @@ public class HerbController {
 		return mv;
 	}
 	@RequestMapping(path = "UpdateHerb.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView updateHerb(@RequestParam("commonName") String n, @ModelAttribute("herb") Herb herb) {
+	public ModelAndView updateHerb(@RequestParam("commonName") String n, @RequestParam("choice") String c, @ModelAttribute("herb") Herb herb) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("result.jsp");
 		herbdao.updateHerb(n);

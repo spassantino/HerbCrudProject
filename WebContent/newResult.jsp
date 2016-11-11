@@ -27,5 +27,6 @@
 		<input type="hidden" name="commonName" value="${herb.commonName}">
 		<input type="submit" value="delete">
 		</form>
+		<a href="index.jsp">Home</a>
 </body>
 </html>

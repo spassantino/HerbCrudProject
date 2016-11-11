@@ -15,7 +15,7 @@
 <br>
 <a href="deleteHerb.html">Remove a Herb and Its Data</a>
 <br>
-<a href="updateHerb.html">Update an existing herb and Its Data</a>
+<a href="updateHerb.jsp">Update an existing herb and Its Data</a>
 <br>
 </body>
 </html>
