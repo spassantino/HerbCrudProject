@@ -11,22 +11,32 @@
 </head>
 <body>
 <h1>${herb.commonName}</h1>
-<div class="result">
 	<c:choose>
 		<c:when test="${! empty herb}">
+<div class="result">
 				Herb Scientific Name: ${herb.scientificName}<br>
+</div>
+<div class="result">
 				Herb Common Name: ${herb.commonName}<br>
+</div>
+<div class="result">
 				Herb Family: ${herb.family}<br>
+</div>
+<div class="result">				
 				Herb Uses: ${herb.uses}<br>
+</div>
+<div class="result">				
 				Herb Precautions: ${herb.precautions}<br>
+	</div>
 				
 			<img src="${herb.photo}" alt="herb photo"><br>
 		</c:when>
 		<c:otherwise>
+		<div class="result">
 			<p>No herb found</p>
+			</div>
 		</c:otherwise>
 	</c:choose>
-	</div>
 		<form action="previous.do" method="GET">
 		<input type="submit" value="previous">
 		</form>

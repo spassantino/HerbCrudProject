@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 
 h1{
+	font-family:cursive;
     top: 90%;
     width: 100%;
     text-align: center;
@@ -9,6 +10,7 @@ h1{
     background-color: black;
 }
 .result{
+	font-family:cursive;
 	background-color: black;
     color: white;
     z-index: 1000;
@@ -19,8 +21,10 @@ h1{
     z-index: 1000;
 }
 body{
+	font-family: cursive;
 	text-align: center;
 	background-image: url("http://brackenburyclinic.com/wp-content/uploads/2015/12/Herbal-Medicine.jpg");
+	background-repeat: repeat-n;
 	color: white;
 }
 img{
@@ -33,6 +37,7 @@ img{
    	background-color:#ff0;
 }
 .data{
+	font-family: cursive;
 	background-color: black;
 	color: yellow;
 	z-index: 1000;

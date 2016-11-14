@@ -18,8 +18,8 @@
 				Herb Family: ${herb.family}<br>
 				Herb Uses: ${herb.uses}<br>
 				Herb Precautions: ${herb.precautions}<br>
-				${herb.photo}<br>
 				</div>
+				${herb.photo}<br>
 		<form action="previous.do" method="GET">
 		<input type="submit" value="previous">
 		</form>
