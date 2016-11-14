@@ -1,22 +1,27 @@
 @CHARSET "UTF-8";
 
 h1{
-	background-color:white;
-	position: absolute;
     left: 0;
-    top: 20%;
+    top: 90%;
     width: 100%;
     text-align: center;
     font-size: 24px;
     color: red;
 }
+a{
+	color: white;
+}
 body{
 	text-align: center;
 	background-image: url("http://brackenburyclinic.com/wp-content/uploads/2015/12/Herbal-Medicine.jpg");
+	color: white;
 }
 img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 400;
+   	padding:1px;
+   	border:1px solid #021a40;
+   	background-color:#ff0;
 }
