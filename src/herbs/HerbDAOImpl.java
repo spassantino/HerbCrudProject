@@ -72,14 +72,11 @@ public class HerbDAOImpl implements HerbDAO {
 	}
 	@Override
 	public void updateHerb(Herb herb, String h) {
-		System.out.println("Common Name: " + h);
 		for (Herb s : herbs) {
 			if(s.getCommonName().toLowerCase().contains(h.toLowerCase())){
 				System.out.println(herbs.indexOf(s));
 				int index = herbs.indexOf(s);
 				herbs.set(index, herb);
-				System.out.println(herbs.get(index));
-//				System.out.println(herbs.indexOf(herb));
 			}
 		}
 	}
