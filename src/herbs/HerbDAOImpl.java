@@ -74,7 +74,6 @@ public class HerbDAOImpl implements HerbDAO {
 	public void updateHerb(Herb herb, String h) {
 		for (Herb s : herbs) {
 			if(s.getCommonName().toLowerCase().contains(h.toLowerCase())){
-				System.out.println(herbs.indexOf(s));
 				int index = herbs.indexOf(s);
 				herbs.set(index, herb);
 			}

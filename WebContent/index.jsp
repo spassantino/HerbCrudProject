@@ -10,13 +10,21 @@
 </head>
 <body>
 <h1>Welcome to the Herb Index</h1>
-<a href="commonNameForm.html">Search a Herb by Common Name</a>
+<span class ="links">
+<a href="commonNameForm.html" id="commonForm">Search a Herb by Common Name</a>
+</span>
 <br>
-<a href="scientificNameForm.html">Search a Herb by Scientific Name</a>
+<span class="links">
+<a href="scientificNameForm.html" id="scientificForm">Search a Herb by Scientific Name</a>
+</span>
 <br>
-<a href="newHerb.html">Add a new Herb and Its Data</a>
+<span class ="links">
+<a href="newHerb.html" id="newForm" >Add a new Herb and Its Data</a>
+</span>
 <br>
-<a href="deleteHerb.html">Remove a Herb and Its Data</a>
+<span class="links">
+<a href="deleteHerb.html" id="deleteForm">Remove a Herb and Its Data</a>
+</span>
 <br>
 </body>
 </html>

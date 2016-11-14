@@ -8,6 +8,8 @@
 </head>
 <body>
 <h1>Enter the following data to add a herb: </h1>
+<div class="data">
+<span id="newData">
 <form action="NewHerb.do" method="POST">
 Herb Scientific Name: <input type="text" name="scientificName"/> <br>
 Herb Common Name: <input type="text" name="commonName"/><br>
@@ -15,7 +17,9 @@ Herb Family: <input type="text" name="family"/><br>
 Herb Uses: <input type="text" name="uses"/><br>
 Herb Precautions: <input type="text" name="precautions"/><br>
 Herb Photo (url): <input type="text" name="photo"/><br>
-    <input type="submit" value="Add Herb Data" /><br>
+<input type="submit" value="Add Herb Data" /><br>
 </form>
+</span>
+</div>
 </body>
 </html>

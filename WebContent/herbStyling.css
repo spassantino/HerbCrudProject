@@ -1,15 +1,22 @@
 @CHARSET "UTF-8";
 
 h1{
-    left: 0;
     top: 90%;
     width: 100%;
     text-align: center;
     font-size: 24px;
     color: red;
+    background-color: black;
 }
-a{
-	color: white;
+.result{
+	background-color: black;
+    color: white;
+    z-index: 1000;
+}
+.links{
+	background-color: black;
+	color: yellow;
+    z-index: 1000;
 }
 body{
 	text-align: center;
@@ -21,7 +28,12 @@ img{
 	margin-left: auto;
 	margin-right: auto;
 	width: 400;
-   	padding:1px;
+   	padding:2px;
    	border:1px solid #021a40;
    	background-color:#ff0;
+}
+.data{
+	background-color: black;
+	color: yellow;
+	z-index: 1000;
 }

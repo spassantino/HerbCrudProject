@@ -12,12 +12,14 @@
 </head>
 <body>
 <h1>You have successfully updated the Herb database!</h1>
+<div class="data">
 				Herb Scientific Name: ${herb.scientificName}<br>
 				Herb Common Name: ${herb.commonName}<br>
 				Herb Family: ${herb.family}<br>
 				Herb Uses: ${herb.uses}<br>
 				Herb Precautions: ${herb.precautions}<br>
 				${herb.photo}<br>
+				</div>
 		<form action="previous.do" method="GET">
 		<input type="submit" value="previous">
 		</form>
@@ -28,7 +30,10 @@
 		<input type="hidden" name="commonName" value="${herb.commonName}">
 		<input type="submit" value="delete">
 		</form>
+		<span class="links">
 		<a href="updateHerb.jsp">Update this Herb</a>
+		<br>
 		<a href="index.jsp">Home</a>
+		</span>
 </body>
 </html>

@@ -11,6 +11,7 @@
 </head>
 <body>
 <h1>${herb.commonName}</h1>
+<div class="result">
 	<c:choose>
 		<c:when test="${! empty herb}">
 				Herb Scientific Name: ${herb.scientificName}<br>
@@ -25,6 +26,7 @@
 			<p>No herb found</p>
 		</c:otherwise>
 	</c:choose>
+	</div>
 		<form action="previous.do" method="GET">
 		<input type="submit" value="previous">
 		</form>
@@ -35,7 +37,10 @@
 		<input type="hidden" name="commonName" value="${herb.commonName}">
 		<input type="submit" value="delete">
 		</form>
+		<span class="links">
 	<a href="updateHerb.jsp">Update this Herb</a>
+	<br>
 	<a href="index.jsp" >Return to Home Page</a>
+	<span class="links">
 </body>
 </html>

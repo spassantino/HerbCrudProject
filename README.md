@@ -8,4 +8,4 @@ Technologies involved in this project include Java, Spring MVC, JSP, and HTML/CS
 ##What I Would Add
 If given additional time I would add an option to view herbs grouped by keywords or common data. I also would like to incorporate a file or printwriter to save herbs on to a csv when added in to the ArrayList.
 ##Obstacles
-A stumbling point I encountered was identifying how to order an object to be retrieved by a specific attribute as well as update its value at the same time.
+A stumbling point I encountered was identifying how to order an object to be retrieved by a specific attribute as well as update its value at the same time. Ultimately I matched them by common name from a for each loop and assigning values to the attributes with setters. Another challenge I had to overcome was the time it took to fill out Herb data based on fields selected. I found no clever or shortcut way to go about it, and collected the data piece by piece.

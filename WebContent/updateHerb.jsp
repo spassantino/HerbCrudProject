@@ -9,9 +9,10 @@
 <title>Update a Herb and Its Data</title>
 </head>
 <body>
-<h2>Find an herb to update by common name:</h2>
+<h1>Find an herb to update by common name:</h1>
 <form action="UpdateHerb.do" method="POST" method="GET">
 <input type="hidden" name="cn" value="${herb.commonName}"/>
+<div class="data">
 Common Name of Herb to Update: <input type="text" name="commonName" value="${herb.commonName}"/><br>
 
 Updated Herb Scientific Name: <input type="text" name="scientificName" value="${herb.scientificName}"/> <br>
@@ -20,6 +21,7 @@ Updated Herb Uses: <input type="text" name="uses" value="${herb.uses}"/><br>
 Updated Herb Precautions: <input type="text" name="precautions" value="${herb.precautions}"/><br>
 Updated Herb Photo (url): <input type="text" name="photo" value="${herb.photo}"/><br>
  <input type="submit" value="Update Herb Data" /><br>
+ <div class="data">
 </form>
 </body>
 </html>
