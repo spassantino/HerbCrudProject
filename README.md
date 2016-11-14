@@ -6,6 +6,6 @@ The goal of the application is to implement C.R.U.D. (Create, Read, Update, Dest
 ##Technologies Used
 Technologies involved in this project include Java, Spring MVC, JSP, and HTML/CSS. 
 ##What I Would Add
-If given additional time I would add an option to view herbs grouped by keywords or common data. I also would like to incorporate a file or printwriter to save herbs when added in to the ArrayList.
+If given additional time I would add an option to view herbs grouped by keywords or common data. I also would like to incorporate a file or printwriter to save herbs on to a csv when added in to the ArrayList.
 ##Obstacles
 A stumbling point I encountered was identifying how to order an object to be retrieved by a specific attribute as well as update its value at the same time.
